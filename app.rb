@@ -12,7 +12,7 @@ get '/' do
 end
 
 post '/checkout' do 
-  @session = session
+  @session = Session.new(params[:item])
   erb :index
 end
 
