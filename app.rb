@@ -12,8 +12,9 @@ get '/' do
 end
 
 post '/checkout' do 
-  @session = Session.new(params[:item])
-  erb :index
+  session[:item] = params[:item]
+    @session = session
+    erb :checkout
 end
 
   
